@@ -1,0 +1,6 @@
+.emails {
+  height: 66vh;
+  overflow-y: scroll;
+  margin: 10px;
+  background-color: lavender;
+}
