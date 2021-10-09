@@ -3,8 +3,16 @@ import "./App.css";
 import UseState from "./UseState/UseState";
 import UseReducer from "./UseReducer/UseReducer";
 import UseEffect from "./UseEffect/UseEffect";
+import UseRef from "./UseRef/UseRef";
+import UseLayoutEffect from "./UseLayoutEffect/UseLayoutEffect";
 
-const hooks = ["useState", "useReducer", "useEffect"];
+const hooks = [
+  "useState",
+  "useReducer",
+  "useEffect",
+  "useRef",
+  "useLayoutEffect",
+];
 
 function App() {
   const [selected, setSelected] = useState(1);
@@ -19,6 +27,12 @@ function App() {
 
       case 2:
         return <UseEffect />;
+
+      case 3:
+        return <UseRef />;
+
+      case 4:
+        return <UseLayoutEffect />;
 
       default:
         return null;

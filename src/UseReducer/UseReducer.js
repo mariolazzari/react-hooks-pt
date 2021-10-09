@@ -1,5 +1,4 @@
-import { useState, useReducer } from "react";
-
+import { useReducer } from "react";
 import "./UseReducer.css";
 
 const initialState = {

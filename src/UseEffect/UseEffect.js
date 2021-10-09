@@ -5,15 +5,24 @@ import axios from "axios";
 const UseEffect = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [error, setError] = useState("");
+
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(
+        "https://jsonplaceholder.typicode.com/comments"
+      );
+      setData(res.data);
+      setError("");
+    } catch (error) {
+      setError(error.toString());
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/comments")
-      .then(res => {
-        setData(res.data);
-        setLoading(false);
-      })
-      .catch(err => console.log(err));
+    fetchData();
   }, []);
 
   return (
@@ -21,11 +30,14 @@ const UseEffect = () => {
       {loading ? (
         <p>loading...</p>
       ) : (
-        <ul>
-          {data.map(item => (
-            <li key={item.id}>{item.email}</li>
-          ))}
-        </ul>
+        <>
+          <h3>{error}</h3>
+          <ul>
+            {data.map(({ id, email }) => (
+              <li key={id}>{email}</li>
+            ))}
+          </ul>
+        </>
       )}
     </div>
   );
