@@ -16,7 +16,7 @@ const UseLayoutEffect = () => {
 
   return (
     <div>
-      <input ref={inputRef} type="text" value="Mario" />
+      <input className="inputRef" ref={inputRef} type="text" value="Mario" />
     </div>
   );
 };

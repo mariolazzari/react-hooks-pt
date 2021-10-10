@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import UseState from "./UseState/UseState";
-import UseReducer from "./UseReducer/UseReducer";
-import UseEffect from "./UseEffect/UseEffect";
-import UseRef from "./UseRef/UseRef";
-import UseLayoutEffect from "./UseLayoutEffect/UseLayoutEffect";
+import UseState from "./UseState";
+import UseReducer from "./UseReducer";
+import UseEffect from "./UseEffect";
+import UseRef from "./UseRef";
+import UseLayoutEffect from "./UseLayoutEffect";
+import UseImperativeHandle from "./UseImperativeHandle";
+import UseContext from "./UseContext";
 
 const hooks = [
   "useState",
@@ -12,6 +14,8 @@ const hooks = [
   "useEffect",
   "useRef",
   "useLayoutEffect",
+  "useImperativeHandle",
+  "useContext",
 ];
 
 function App() {
@@ -33,6 +37,12 @@ function App() {
 
       case 4:
         return <UseLayoutEffect />;
+
+      case 5:
+        return <UseImperativeHandle />;
+
+      case 6:
+        return <UseContext />;
 
       default:
         return null;
