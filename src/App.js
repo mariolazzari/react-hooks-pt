@@ -7,6 +7,7 @@ import UseRef from "./UseRef";
 import UseLayoutEffect from "./UseLayoutEffect";
 import UseImperativeHandle from "./UseImperativeHandle";
 import UseContext from "./UseContext";
+import UseMemo from "./UseMemo";
 
 const hooks = [
   "useState",
@@ -16,6 +17,8 @@ const hooks = [
   "useLayoutEffect",
   "useImperativeHandle",
   "useContext",
+  "useMemo",
+  "useCallback",
 ];
 
 function App() {
@@ -43,6 +46,9 @@ function App() {
 
       case 6:
         return <UseContext />;
+
+      case 7:
+        return <UseMemo />;
 
       default:
         return null;
